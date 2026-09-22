@@ -3,262 +3,656 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIKA</title>
+<meta name="theme-color" content="#f5e8df">
+<title>aika ♡</title>
 
 <style>
+:root{
+  --cream:#f6efe3;
+  --pink:#edcfce;
+  --rose:#d7a5a7;
+  --sage:#b9c7b6;
+  --aqua:#a9ccc5;
+  --gold:#ad884d;
+  --brown:#51483f;
+  --paper:#fffaf3;
+}
+
 *{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
-  background:#f4f2e9;
-  color:#4d5147;
-  font-family:Georgia,serif;
+  color:var(--brown);
+  font-family:Georgia,"Times New Roman",serif;
+  background:
+    radial-gradient(circle at 10% 8%,rgba(238,190,195,.65),transparent 27%),
+    radial-gradient(circle at 95% 32%,rgba(159,199,193,.42),transparent 30%),
+    radial-gradient(circle at 15% 80%,rgba(185,199,182,.45),transparent 28%),
+    #f5eee2;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.17;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(95,75,55,.05) 4px
+    );
 }
 
 .app{
-  max-width:480px;
+  width:min(100%,500px);
   margin:auto;
+  overflow:hidden;
   min-height:100vh;
-  padding:45px 22px 100px;
-  background:
-    radial-gradient(circle at top right,#f6dfdf 0,transparent 25%),
-    linear-gradient(#f4f2e9,#edf0e5);
 }
 
-header{
-  text-align:center;
-  padding:25px 0 35px;
-}
-
-.symbol{
-  font-size:30px;
-  color:#9b8151;
-  letter-spacing:7px;
-}
-
-h1{
-  margin:12px 0 5px;
-  font-size:44px;
-  font-weight:400;
-  letter-spacing:10px;
-}
-
-.tagline{
-  font-size:11px;
-  letter-spacing:3px;
-  color:#8a907e;
-}
+/* HERO */
 
 .hero{
-  background:#dce3d3;
-  padding:28px;
-  border-radius:28px;
-  margin-bottom:20px;
+  min-height:650px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:70px 25px;
+  background:
+    radial-gradient(circle at 50% 30%,rgba(255,255,255,.7),transparent 30%),
+    linear-gradient(160deg,#f6dfdd,#f7ede2 50%,#dce5d8);
 }
 
-.hero small{
-  letter-spacing:2px;
-  color:#7d856f;
+.sun{
+  width:105px;
+  height:105px;
+  border:2px solid var(--gold);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--gold);
+  font-size:36px;
+  margin-bottom:32px;
+  box-shadow:
+    0 0 0 9px rgba(173,136,77,.07),
+    0 0 45px rgba(205,162,83,.18);
 }
 
-.hero h2{
-  font-size:25px;
+.sun:after{
+  content:"✦  ✧  ✦";
+  position:absolute;
+  transform:translateY(78px);
+  font-size:12px;
+  letter-spacing:9px;
+}
+
+.logo{
+  font-family:"Snell Roundhand","Apple Chancery",cursive;
+  font-size:72px;
   font-weight:400;
+  line-height:.9;
+  margin:10px 0 15px;
+  color:#554b43;
+}
+
+.subtitle{
+  font-size:11px;
+  letter-spacing:4px;
+  color:#927650;
+  text-transform:uppercase;
+}
+
+.hero-note{
+  margin-top:45px;
+  width:88%;
+  padding:25px 22px;
+  background:rgba(255,250,245,.52);
+  border:1px solid rgba(173,136,77,.2);
+  transform:rotate(-1deg);
+  box-shadow:0 10px 35px rgba(70,50,40,.06);
+}
+
+.hero-note p{
+  font-style:italic;
+  line-height:1.8;
+  margin:0;
+  font-size:17px;
+}
+
+.tiny{
+  margin-top:13px;
+  font-size:9px;
+  letter-spacing:3px;
+  color:#988675;
+}
+
+/* FLOWERS */
+
+.blossom{
+  position:absolute;
+  font-size:22px;
+  opacity:.55;
+  animation:float 7s ease-in-out infinite;
+}
+
+.b1{top:12%;left:10%}
+.b2{top:20%;right:9%;animation-delay:2s}
+.b3{bottom:13%;left:8%;animation-delay:4s}
+.b4{bottom:8%;right:12%;animation-delay:1s}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(0)}
+  50%{transform:translateY(-12px) rotate(8deg)}
+}
+
+/* CELESTIAL */
+
+.celestial{
+  padding:70px 25px;
+  text-align:center;
+  background:
+    linear-gradient(rgba(162,202,194,.84),rgba(190,207,187,.78));
+}
+
+.celestial-art{
+  font-size:46px;
+  letter-spacing:13px;
+  color:#9b7741;
+  margin-bottom:22px;
+}
+
+.celestial h2{
+  font-weight:400;
+  font-size:26px;
   margin:10px 0;
 }
 
-.hero p{
-  line-height:1.7;
+.celestial p{
+  max-width:340px;
+  margin:15px auto 0;
+  line-height:1.8;
+  font-style:italic;
   font-size:14px;
 }
 
-.tree{
+/* TREE */
+
+.tree-section{
+  padding:75px 25px;
   text-align:center;
-  font-size:35px;
-  padding:16px 0 25px;
+  background:#f5eddf;
 }
 
-.tree span{
-  display:block;
-  font-size:12px;
-  letter-spacing:3px;
-  margin-top:8px;
-  color:#9a8358;
+.tree-art{
+  position:relative;
+  width:210px;
+  height:190px;
+  margin:0 auto 25px;
+}
+
+.trunk{
+  position:absolute;
+  width:10px;
+  height:92px;
+  background:#8e7258;
+  left:100px;
+  bottom:0;
+  border-radius:10px;
+}
+
+.crown{
+  position:absolute;
+  width:175px;
+  height:130px;
+  left:17px;
+  top:0;
+  border-radius:48% 52% 45% 55%;
+  background:
+    radial-gradient(circle at 25% 35%,#f0c7cb 0 7px,transparent 8px),
+    radial-gradient(circle at 65% 25%,#e7b7bd 0 6px,transparent 7px),
+    radial-gradient(circle at 75% 65%,#f4d4d5 0 7px,transparent 8px),
+    radial-gradient(circle at 38% 72%,#e8bec2 0 6px,transparent 7px),
+    #b7c5ae;
+  box-shadow:inset 0 0 30px rgba(86,107,79,.15);
+}
+
+.bow{
+  position:absolute;
+  right:-3px;
+  top:82px;
+  font-size:42px;
+  transform:rotate(-12deg);
+}
+
+.tree-caption{
+  letter-spacing:4px;
+  font-size:10px;
+  color:var(--gold);
+}
+
+.tree-section h2{
+  font-weight:400;
+  margin-top:16px;
+  font-size:24px;
+}
+
+/* SCRAPBOOK */
+
+.world{
+  padding:65px 20px;
+  background:
+    radial-gradient(circle at 100% 0,#eed1d1,transparent 27%),
+    radial-gradient(circle at 0 80%,#c5d4c4,transparent 28%),
+    #f4ecdf;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-title small{
+  letter-spacing:4px;
+  color:var(--gold);
+  font-size:9px;
+}
+
+.section-title h2{
+  font-weight:400;
+  font-size:31px;
+  margin:9px 0;
 }
 
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:15px;
 }
 
 .card{
-  background:rgba(255,255,255,.72);
-  border:1px solid rgba(180,170,145,.22);
-  border-radius:22px;
-  padding:22px 15px;
-  min-height:120px;
-  box-shadow:0 7px 22px rgba(60,60,40,.04);
+  min-height:175px;
+  padding:22px 18px;
+  position:relative;
+  background:rgba(255,251,245,.88);
+  border:1px solid rgba(135,111,80,.15);
+  box-shadow:0 10px 28px rgba(68,54,40,.07);
+  transition:.3s ease;
 }
 
-.card .icon{
-  font-size:23px;
-  margin-bottom:13px;
+.card:nth-child(3n+1){transform:rotate(-1deg)}
+.card:nth-child(3n+2){transform:rotate(1deg)}
+
+.card:active{
+  transform:scale(.97);
 }
 
-.card strong{
-  display:block;
+.card:before{
+  content:"";
+  position:absolute;
+  width:42px;
+  height:12px;
+  background:rgba(219,190,160,.45);
+  top:-6px;
+  left:50%;
+  transform:translateX(-50%) rotate(-2deg);
+}
+
+.icon{
+  font-size:25px;
+  color:#9b7b4b;
+  margin-bottom:25px;
+}
+
+.card h3{
+  margin:0;
+  font-size:20px;
   font-weight:400;
-  font-size:17px;
 }
 
-.card small{
-  display:block;
-  margin-top:7px;
-  color:#96968d;
+.card p{
   font-family:Arial,sans-serif;
   font-size:10px;
-  line-height:1.5;
+  line-height:1.6;
+  color:#8b8982;
+  letter-spacing:1px;
 }
+
+/* DESIRES */
+
+.desires{
+  margin:60px 0 0;
+  padding:45px 25px;
+  text-align:center;
+  background:#3f3d3d;
+  color:#e5bdc5;
+  border-radius:4px;
+}
+
+.desires .heart{
+  font-size:34px;
+}
+
+.desires h2{
+  font-family:Arial,sans-serif;
+  font-weight:300;
+  font-size:30px;
+  line-height:1.35;
+  margin:20px 0;
+}
+
+.desires small{
+  letter-spacing:3px;
+  color:#c99da7;
+}
+
+/* BIBLE */
+
+.bible{
+  padding:70px 30px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 25%),
+    linear-gradient(145deg,#d99ea1,#efc3bf,#d7a4a5);
+  color:white;
+}
+
+.bible .flower{
+  font-size:31px;
+}
+
+.bible h2{
+  font-family:"Snell Roundhand","Apple Chancery",cursive;
+  font-weight:400;
+  font-size:35px;
+  margin:14px;
+}
+
+.verse{
+  font-size:17px;
+  line-height:1.8;
+  max-width:360px;
+  margin:auto;
+}
+
+.reference{
+  display:block;
+  margin-top:18px;
+  letter-spacing:3px;
+  font-size:10px;
+}
+
+/* I AM */
 
 .iam{
-  margin-top:18px;
-  background:#eee0dd;
-  border-radius:25px;
-  padding:25px;
+  padding:85px 30px;
   text-align:center;
+  background:#f5e5e2;
+  position:relative;
 }
 
-.iam h3{
-  letter-spacing:4px;
+.iam:before{
+  content:"❀";
+  position:absolute;
+  font-size:60px;
+  opacity:.09;
+  left:25px;
+  top:30px;
+}
+
+.iam:after{
+  content:"✧";
+  position:absolute;
+  font-size:70px;
+  opacity:.10;
+  right:30px;
+  bottom:30px;
+}
+
+.iam h2{
+  letter-spacing:8px;
+  font-size:27px;
   font-weight:400;
 }
 
 .iam p{
-  font-size:13px;
-  line-height:2;
+  line-height:2.2;
+  font-size:16px;
 }
+
+.signature{
+  font-family:"Snell Roundhand","Apple Chancery",cursive;
+  font-size:38px;
+  margin-top:35px;
+  color:#8b6e65;
+}
+
+/* FOOTER */
 
 footer{
   text-align:center;
-  padding:40px 0 10px;
-  font-size:12px;
-  letter-spacing:2px;
-  color:#8e8a78;
+  padding:60px 20px;
+  background:#e4e8d9;
+}
+
+footer .lotus{
+  font-size:32px;
+}
+
+footer p{
+  font-size:10px;
+  letter-spacing:4px;
+  color:#927a56;
+  margin-top:18px;
+}
+
+@media(max-width:370px){
+  .logo{font-size:60px}
+  .grid{gap:10px}
+  .card{padding:18px 14px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="app">
-
-<header>
-  <div class="symbol">❀ ◇ ❀</div>
-  <h1>AIKA</h1>
-  <div class="tagline">GOLDEN • FLOWING • FREE</div>
-</header>
+<main class="app">
 
 <section class="hero">
-  <small>MY LITTLE WORLD</small>
-  <h2>live gently. bloom freely.</h2>
-  <p>
-    A home for everything beautiful,
-    meaningful and loved.
-  </p>
+
+  <span class="blossom b1">❀</span>
+  <span class="blossom b2">✧</span>
+  <span class="blossom b3">❀</span>
+  <span class="blossom b4">◇</span>
+
+  <div class="sun">☼</div>
+
+  <h1 class="logo">aika</h1>
+
+  <div class="subtitle">
+    golden · flowing · free
+  </div>
+
+  <div class="hero-note">
+    <p>
+      “living gently,<br>
+      becoming beautifully.”
+    </p>
+    <div class="tiny">
+      A LITTLE WORLD OF THINGS I LOVE
+    </div>
+  </div>
+
 </section>
 
-<div class="tree">
-  🌳 🏹
-  <span>ROOTED • AIMING TOWARD THE LIGHT</span>
-</div>
 
-<div class="grid">
+<section class="celestial">
 
-  <div class="card">
-    <div class="icon">♡</div>
-    <strong>Beauty</strong>
-    <small>SKIN • MAKEUP • HAIR • PERFUME</small>
+  <div class="celestial-art">
+    ☼ ☾ ✧
   </div>
 
-  <div class="card">
-    <div class="icon">✧</div>
-    <strong>Wishlist</strong>
-    <small>GIFTS • DREAM PIECES • THINGS I LOVE</small>
+  <h2>between sunlight & moonlight</h2>
+
+  <p>
+    soft water, golden light, flowers in bloom
+    and all the beautiful little things
+    that make life feel like mine.
+  </p>
+
+</section>
+
+
+<section class="tree-section">
+
+  <div class="tree-art">
+    <div class="crown"></div>
+    <div class="trunk"></div>
+    <div class="bow">🏹</div>
   </div>
 
-  <div class="card">
-    <div class="icon">♢</div>
-    <strong>Closet</strong>
-    <small>OUTFITS • BAGS • JEWELRY</small>
+  <div class="tree-caption">
+    ROOTED • GROWING • AIMING TOWARD THE LIGHT
   </div>
 
-  <div class="card">
-    <div class="icon">❀</div>
-    <strong>Flowers</strong>
-    <small>ROSES • LILIES • CHERRY BLOSSOMS</small>
+  <h2>grow toward what you love.</h2>
+
+</section>
+
+
+<section class="world">
+
+  <div class="section-title">
+    <small>MY LITTLE ARCHIVE</small>
+    <h2>aika's world</h2>
   </div>
 
-  <div class="card">
-    <div class="icon">☼</div>
-    <strong>Glow</strong>
-    <small>PILATES • RUNNING • SELF CARE</small>
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">♡</div>
+      <h3>beauty</h3>
+      <p>SKIN · MAKEUP · HAIR · PERFUME</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">✧</div>
+      <h3>desires</h3>
+      <p>GIFTS · WISHLIST · DREAM PIECES</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">♢</div>
+      <h3>closet</h3>
+      <p>OUTFITS · BAGS · JEWELRY</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">❀</div>
+      <h3>flowers</h3>
+      <p>ROSES · LILIES · CHERRY BLOSSOMS</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">☼</div>
+      <h3>glow</h3>
+      <p>PILATES · RUNNING · SELF CARE</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">✞</div>
+      <h3>bible</h3>
+      <p>VERSES · REFLECTIONS · PRAYERS</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">♨</div>
+      <h3>matcha</h3>
+      <p>RITUALS · FAVORITES · QUIET MORNINGS</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">✎</div>
+      <h3>journal</h3>
+      <p>THOUGHTS · MEMORIES · PHOTOS</p>
+    </div>
+
   </div>
 
-  <div class="card">
-    <div class="icon">✞</div>
-    <strong>Bible</strong>
-    <small>VERSES • REFLECTIONS • PRAYERS</small>
+
+  <div class="desires">
+    <div class="heart">♡</div>
+    <h2>
+      i deserve<br>
+      all of my desires
+    </h2>
+    <small>LOVE • BEAUTY • LIFE</small>
   </div>
 
-  <div class="card">
-    <div class="icon">♨</div>
-    <strong>Matcha</strong>
-    <small>RITUALS • FAVORITES • QUIET MORNINGS</small>
+</section>
+
+
+<section class="bible">
+
+  <div class="flower">❀</div>
+
+  <h2>near to Him</h2>
+
+  <div class="verse">
+    “The Lord is near to all who call on him,
+    to all who call on him in truth.”
   </div>
 
-  <div class="card">
-    <div class="icon">✎</div>
-    <strong>Journal</strong>
-    <small>THOUGHTS • MEMORIES • PHOTOS</small>
-  </div>
+  <span class="reference">
+    PSALM 145:18
+  </span>
 
-  <div class="card">
-    <div class="icon">♡</div>
-    <strong>Favorites</strong>
-    <small>MY MOST LOVED THINGS</small>
-  </div>
+</section>
 
-  <div class="card">
-    <div class="icon">◇</div>
-    <strong>I AM</strong>
-    <small>WHO I AM • WHO I AM BECOMING</small>
-  </div>
-
-</div>
 
 <section class="iam">
-  <h3>I AM AIKA</h3>
+
+  <h2>I AM AIKA</h2>
+
   <p>
     golden sun-kissed<br>
     brown eyes<br>
-    roses & cherry blossoms<br>
+    roses · lilies · cherry blossoms<br>
     spring & autumn<br>
     sweet like a lovely song<br>
-    patient • content • flowing<br>
-    diamond light<br>
-    earth angel<br>
-    living • loving • becoming<br>
-    <b>I am free.</b>
+    patience · contentment<br>
+    living & enjoying<br>
+    diamond <br>
+    flowing · divine<br>
+    🌎🪽 angel<br><br>
+    <strong>I am love.</strong>
   </p>
+
+  <div class="signature">
+    aika ♡
+  </div>
+
 </section>
 
+
 <footer>
-  ❀ AIKA ❀<br><br>
-  beauty in every season
+
+  <div class="lotus">🪷</div>
+
+  <p>
+    BEAUTY IN EVERY SEASON
+  </p>
+
 </footer>
 
-</div>
+</main>
 
 </body>
 </html>
